@@ -7,8 +7,12 @@ import { usePathname } from 'next/navigation'
 import styles from './Sidebar.module.scss'
 import { MENU } from './sidebar.data'
 
+const isLoggedIn = false
+
 export function Sidebar() {
 	const pathName = usePathname()
+
+	if (!isLoggedIn) return null
 
 	return (
 		<aside className={styles.sidebar}>
